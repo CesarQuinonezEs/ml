@@ -18,13 +18,13 @@ class KNN:
         return predictions
 
     def _predict(self, x):
-        # compute the distance
+        # saca las distancias
         distances = [euclidean_distance(x, x_train) for x_train in self.X_train]
     
-        # get the closest k
+        # obtiene el vecino mas cercano
         k_indices = np.argsort(distances)[:self.k]
         k_nearest_labels = [self.y_train[i] for i in k_indices]
 
-        # majority voye
+        # regresa el k label mas comun
         most_common = Counter(k_nearest_labels).most_common()
         return most_common[0][0]
