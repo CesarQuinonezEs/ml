@@ -15,4 +15,4 @@ def openAllFiles(path):
     for archivo in archivos_de_texto:
         ruta_completa = os.path.join(path, archivo)
         num.append(getNumbers(ruta_completa))
-    return np.array(num).flatten()
+    return np.array(num)
